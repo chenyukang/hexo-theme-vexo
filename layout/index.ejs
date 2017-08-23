@@ -1,21 +1,32 @@
 <main class="app-body">
+    <% var index = 0 %>
   <% page.posts.each(function(post) { %>
     <article class="article-card">
-      <h2 class="article-head">
+      <h2 class="article-head" font-color="red">
         <a href="<%- url_for(post.path) %>"><%- post.title %></a>
       </h2>
-      <p class="article-date"><%- date(post.date, "LL") %></p>
-      <% if (post.tags && post.tags.length) { %>
-        <%- partial('_partial/tag', { tags: post.tags }) %>
-      <% } %>
+      <p class="article-date"><%- date(post.date, "LL") %>
+          <% if (post.tags && post.tags.length) { %>
+              <%- partial('_partial/tag', { tags: post.tags }) %>
+          <% } %>
+      </p>
       <div class="article-summary">
+        <% index = index + 1 %>
         <% if (post.excerpt) { %>
           <%- post.excerpt %>
         <% } else { %>
-          <%- truncate(strip_html(post.content), { length: 150, omission: ' ...' }) %>
+            <% if (index == 1 && page.current == 1) { %>
+                <%- post.content %>
+            <% } else  { %>
+                <%- truncate(strip_html(post.content), { length: 150, omission: ' .....' }) %>
+            <% } %>
         <% } %>
       </div>
-      <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
+      <% if (index == 1 && page.current == 1) { %>
+          <a class="more" href="<%- url_for(post.path) + "#footer" %>">发表评论</a>
+      <% } else { %>
+          <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
+      <% } %>
     </article>
   <% }) %>
 

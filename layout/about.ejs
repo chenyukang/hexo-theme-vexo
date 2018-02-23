@@ -3,6 +3,7 @@
   <div class="head">
     <img src="<%- theme.about.avatar %>" />
   </div>
+
   <article class="post-article">
       <section class="markdown-content"><p>这里写出的文字是自己的积累和沉淀，多为技术相关的内容。</p>
           <p>如果对我写的东西感兴趣，你可以订阅我的<a href="/atom.xml">RSS</a>，我会保持全文输出。</p>
@@ -11,41 +12,42 @@
           <p>有相同兴趣爱好的朋友，联系方式 →_→  <a href="mailto:moorekang@gmail.com" target="_blank" rel="external">moorekang@gmail.com</a></p>
       </section>
   </article>
+
   <section class="share-icons">
-    <% if (config.weibo_username) { %>
-      <a class="icon-weibo" href="http://weibo.com/<%- config.weibo_username %>" target="_blank">
+    <% if (theme.about.weibo_username) { %>
+      <a class="icon-weibo" href="http://weibo.com/<%- theme.about.weibo_username %>" target="_blank">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
         </span>
       </a>
     <% } %>
-    <% if (config.twitter_username) { %>
-      <a class="icon-twitter" href="https://twitter.com/<%- config.twitter_username %>" target="_blank">
+    <% if (theme.about.twitter_username) { %>
+      <a class="icon-twitter" href="https://twitter.com/<%- theme.about.twitter_username %>" target="_blank">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
         </span>
       </a>
     <% } %>
-    <% if (config.github_username) { %>
-      <a class="icon-github" href="https://github.com/<%- config.github_username %>" target="_blank">
+    <% if (theme.about.github_username) { %>
+      <a class="icon-github" href="https://github.com/<%- theme.about.github_username %>" target="_blank">
         <span class="fa-stack fa-lg">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
         </span>
       </a>
     <% } %>
-    <% if (config.zhihu_username) { %>
-        <a class="icon-zhihu" href="https://www.zhihu.com/people/<%- config.zhihu_username %>" target="_blank">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-stack-1x fa-inverse">知</i>
-            </span>
-        </a>
+    <% if (theme.about.zhihu_username) { %>
+      <a class="icon-zhihu" href="https://www.zhihu.com/people/<%- theme.about.zhihu_username %>" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-stack-1x fa-inverse">知</i>
+        </span>
+      </a>
     <% } %>
-    <% if (config.douban_username) { %>
-        <a class="icon-douban" href="https://www.douban.com/people/<%- config.douban_username %>" target="_blank">
+    <% if (theme.about.douban_username) { %>
+        <a class="icon-douban" href="https://www.douban.com/people/<%- theme.about.douban_username %>" target="_blank">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-stack-1x fa-inverse">豆</i>

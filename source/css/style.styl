@@ -7,9 +7,6 @@
   background: color-primary
   color: color-white
 
-::-webkit-scrollbar
-  display: none
-
 body
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
   -webkit-font-smoothing: antialiased
@@ -40,6 +37,13 @@ p
 pre
   overflow-x: auto
 
+.flex-box
+  display: flex
+  display: -ms-flexbox
+  display: -webkit-box
+  display: -webkit-flex
+  transform: unset !important
+
 .wechat-share
   width: 0
   height: 0
@@ -49,10 +53,10 @@ pre
     height 400px
 
 .app-body
-  padding: 1em
+  padding: 2em 1em
   margin: 0 auto
   height: 100%
-  max-width: 750px
+  max-width: 980px
   position: relative
   opacity: 0
   transform: translateY(-20px)
@@ -82,7 +86,7 @@ pre
 .article-card
   padding-bottom: 20px
   &:first-child
-    margin-top: 80px
+    margin-top: 60px
 
 h2.article-head
   font-size: 1.6em
@@ -114,7 +118,7 @@ h2.article-head
   box-sizing: border-box
   top: 0
   left: 0
-  padding: 80px 20px 25px 20px
+  padding: 100px 20px 25px 20px
   text-align: center
   position: relative
   background-repeat: no-repeat
@@ -162,9 +166,8 @@ h2.article-head
       border-left: 1px solid color-white
 
 .post-article
-  margin-top: 20px
-  @media m-mobile
-    margin-top: 0
+  margin-top: 0
+  width: 100%
 
 .money-like
   padding: 2em 0 3em
@@ -242,6 +245,9 @@ h2.article-head
     padding: 5px
     box-shadow: 0 0 1px color-shadow
 
+#uyan_frame
+  margin-top: 20px
+
 .image-view-wrap
   position: fixed
   top: 0
@@ -275,13 +281,12 @@ h2.article-head
   transform: translate(80px, 0)
   transition: all .3s ease
   box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 3px 3px 0 rgba(0,0,0,.24)
-
-.arrow-icon
-  background-image: url(arrow-url)
-  width: 30px
-  height: 30px
-  display: block
-  background-size: contain
+  .arrow-icon
+    background-image: url(arrow-url)
+    width: 30px
+    height: 30px
+    display: block
+    background-size: contain
 
 .opacity
   opacity: 1
@@ -303,3 +308,5 @@ h2.article-head
 @import "_partial/archive"
 @import "_partial/about"
 @import "_partial/project"
+@import "_partial/catalog"
+@import "_partial/nav"

@@ -8,6 +8,23 @@
   var catalog = $('.catalog-container .toc-main')
   var isOpen = false
 
+  function detectmob() {
+        if(window.innerWidth <= 800) {
+            return true;
+        } else {
+            return false;
+        }
+   }
+
+  if(catalog.length != 0) {
+      app.css("maxWidth", "980px");
+      return;
+  }
+
+  if(detectmob()) {
+    $('.nav-container').hide();
+  }
+
   $(document).ready(function () {
     NProgress.start()
     $('#nprogress .bar').css({

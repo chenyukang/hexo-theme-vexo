@@ -16,7 +16,21 @@ menu:
 highlight:
   tomorrow
 
-# gitment
+# catalog
+catalog: true
+
+# donate
+donate: true
+
+# qrcode
+qrcode: true
+
+# comment
+# you can set gitment or uyan
+
+comment: gitment
+
+# gitment config
 gitment_owner: yanm1ng
 gitment_repo: yanm1ng.github.io
 gitment_oauth_id: 0f87e490e00ee3fd87ef
@@ -30,4 +44,15 @@ baidu_id:
 about: 
   banner: http://file.muyutech.com/about.jpg
   avatar: https://avatars3.githubusercontent.com/u/16443628?v=3&s=460
-  description: The end is always near.
+  description: "The end is always near."
+  weibo_username: yanm1ng
+  twitter_username: yanm1ng
+  github_username: yanm1ng
+  zhihu_username: yummy1121
+  douban_username: yanm1ng
+
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML

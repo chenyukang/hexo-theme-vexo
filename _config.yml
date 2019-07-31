@@ -14,8 +14,12 @@ menu:
 
 # highlight
 highlight:
-  vs
+  #agate
+  #monokai-sublime
+  #dracula
+  solarized-dark
 
+  
 
 github_username: chenyukang
 zhihu_username: cyukang

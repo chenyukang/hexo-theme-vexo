@@ -7,16 +7,19 @@
   background: color-primary
   color: color-white
 
-body
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  -webkit-text-size-adjust: none
+html 
+  font-size: 62.5%
+
+body 
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   position: relative
-  height: 100%
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+  text-align: justify;
+  hyphens: auto;
   margin: 0
-  color: color-dark
-  font-size: 16px
   @media m-mobile
     font-size: 15px
 

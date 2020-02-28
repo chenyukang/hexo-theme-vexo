@@ -23,7 +23,7 @@
         <% } %>
       </div>
       <% if (index == 1 && page.current == 1) { %>
-          <a class="more" href="<%- url_for(post.path) + "#footer" %>">发表评论</a>
+          <a class="more" href="<%- url_for(post.path) + "#footer" %>">Comment</a>
       <% } else { %>
           <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
       <% } %>

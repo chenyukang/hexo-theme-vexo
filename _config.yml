@@ -1,29 +1,26 @@
-author: Yukang
+author: Nick Chen
 description: All about coding and software
 keyword: Programming, Programming Languages, Algorithms, Tools
 favicon:
 
-excerpt_link: 阅读全文
+excerpt_link: Read More ...
 
 menu:
  Home: /
  Tags: /tags/
  Archives: /archives/
- Projects: /project/
  About: /about/
 
 # highlight
 highlight:
   #agate
   #monokai-sublime
-  #dracula
-  solarized-dark
+  dracula
+  #solarized-dark
 
-  
-
-github_username: chenyukang
-zhihu_username: cyukang
-douban_username: moorekang
+github_username: 
+zhihu_username: 
+douban_username: 
 
 
 # catalog
@@ -46,19 +43,15 @@ gitment_repo: chenyukang.github.io
 gitment_oauth_id: ccc45f6f66c60934e41a
 gitment_oauth_secret: 84f77bd89f8dfbd1bf77dcd696f2a66b1afe7587
 
-# uyan
-# if you want to use uyan as your blog comment, plz remove/comment out gitment config
-
-baidu_id: ba1315646a61cc7bd6f574a6b5221640
 
 about:
   banner: http://chenyukang.github.io/images/134871342111-2510476.jpg
   avatar: https://avatars1.githubusercontent.com/u/230646?v=4&s=460
   description: "Dont't Panic"
-  twitter_username: YukangChen
-  github_username: chenyukang
-  zhihu_username: cyukang
-  douban_username: moorekang
+  twitter_username: coderscat
+  github_username: 
+  zhihu_username: 
+  douban_username: 
 
 # MathJax Support
 mathjax:

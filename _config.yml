@@ -1,7 +1,7 @@
-author: Yukang 
+author: Yukang
 description: All about coding and software
 keyword: Programming, Programming Languages, Algorithms, Tools
-favicon: 
+favicon:
 
 excerpt_link: 阅读全文
 
@@ -14,13 +14,33 @@ menu:
 
 # highlight
 highlight:
-  tomorrow
+  #agate
+  #monokai-sublime
+  #dracula
+  solarized-dark
+
+  
 
 github_username: chenyukang
 zhihu_username: cyukang
 douban_username: moorekang
 
-# gitment
+
+# catalog
+catalog: true
+
+# donate
+donate: true
+
+# qrcode
+qrcode: true
+
+# comment
+# you can set gitment or uyan
+
+comment: gitment
+
+# gitment config
 gitment_owner: chenyukang
 gitment_repo: chenyukang.github.io
 gitment_oauth_id: ccc45f6f66c60934e41a
@@ -31,7 +51,17 @@ gitment_oauth_secret: 84f77bd89f8dfbd1bf77dcd696f2a66b1afe7587
 
 baidu_id: ba1315646a61cc7bd6f574a6b5221640
 
-about: 
-  banner: http://cyukang.com/images/134871342111-2510476.jpg
+about:
+  banner: http://chenyukang.github.io/images/134871342111-2510476.jpg
   avatar: https://avatars1.githubusercontent.com/u/230646?v=4&s=460
-  description: ""
+  description: "Dont't Panic"
+  twitter_username: YukangChen
+  github_username: chenyukang
+  zhihu_username: cyukang
+  douban_username: moorekang
+
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML

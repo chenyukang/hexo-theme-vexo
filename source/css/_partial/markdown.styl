@@ -3,21 +3,26 @@
   overflow-x: hidden
   pre, code
     font-family: 'Roboto Mono', Monaco, courier, monospace
-    font-size: 13px
+    font-size: 16px
     @media m-mobile
       font-size: 12px
+    @media (max-width: 1280px)
+      font-size: 13px;
+
     .line
       min-height: 13px
       margin: 2px 0
+
   p
     line-height: 1.6em
     code
-      background-color: color-background
-      color: color-orange
-      padding: 3px 5px
-      margin: 0 2px
-      border-radius: 2px
-      white-space: nowrap
+      background-color: #ebeff3
+      color: #34495e;
+      padding: 3px 5px;
+      margin: 0 2px;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-weight: bold;
   h1
     font-size: 1.8em
   h2
@@ -55,7 +60,7 @@
     margin: 20px auto
     cursor: zoom-in
   figure
-    background: color-background
+    background: code-color-background
     padding: 0 10px
     border-radius: 2px
     margin: 20px 0
@@ -73,6 +78,10 @@
       line-height: 15px
       height: 15px
       font-weight: 500
+    figcaption
+      text-align: center
+      font-size: 0.7em
+      color: green
   > table
     width: 100%
     thead

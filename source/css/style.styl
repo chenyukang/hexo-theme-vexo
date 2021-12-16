@@ -28,10 +28,10 @@ h1, h2, h3, h4, h5, h6, .nav, .article-duration, .archive-item-link, .footer {
   background: color-primary
   color: color-white
 
-html 
+html
   font-size: 62.5%
 
-body 
+body
   font-family: 'Merriweather', serif;
   font-size: 1.7em; /* currently ems cause chrome bug misinterpreting rems on body element */
   position: relative
@@ -39,6 +39,7 @@ body
   font-weight: 400;
   color: #222;
   text-align: justify;
+  word-break: break-word
   hyphens: auto;
   margin: 0
   @media m-mobile
@@ -192,6 +193,7 @@ h2.article-head
 .post-article
   margin-top: 0
   width: 100%
+  max-width: 750px
 
 .money-like
   padding: 2em 0 3em

@@ -48,8 +48,6 @@ gitment_oauth_secret: 84f77bd89f8dfbd1bf77dcd696f2a66b1afe7587
 # uyan
 # if you want to use uyan as your blog comment, plz remove/comment out gitment config
 
-baidu_id: ba1315646a61cc7bd6f574a6b5221640
-
 about:
   banner: http://chenyukang.github.io/images/134871342111-2510476.jpg
   avatar: https://avatars1.githubusercontent.com/u/230646?v=4&s=460

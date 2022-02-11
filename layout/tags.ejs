@@ -24,16 +24,17 @@
 
 <script>
   (function () {
+    var header = $('.header');
     var url = '<%= config.url %>/<%= decodeURIComponent(page.path) %>'
+
     $('#article-banner').geopattern(url)
     $('.header').removeClass('fixed-header')
 
     var tag = decodeURIComponent(location.hash.replace('#', ''))
     if (tag) {
       var tagId = "#tag-" + tag;
-      console.log(tagId);
       $("html, body").animate({
-        scrollTop: $(tagId).offset().top - 50
+        scrollTop: $(tagId).offset().top - header.height()
       }, 400)
     }
   })();

@@ -9,6 +9,16 @@
   <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><%- page.content %></section>
+
+    <p></p>
+    <!-- 二维码 START -->
+    <% if (theme.qrcode) { %>
+        <div class="qrcode">
+            <img src="/images/wechat-qr-code.png" height="125" width="125">
+            <figcaption>公号同步更新，欢迎关注</figcaption>
+      </div>
+    <% } %>
+
     <!-- Tags START -->
     <% if (page.tags && page.tags.length) { %>
       <div class="tags">
@@ -20,12 +30,7 @@
     <!-- NAV START -->
     <%- partial('_partial/nav') %>
     <!-- NAV END -->
-    <!-- 二维码 START -->
-    <% if (theme.qrcode) { %>
-        <div class="qrcode">
-            <img src="/images/wechat-qr-code.png" height="120" width="120">
-      </div>
-    <% } %>
+
     <!-- 二维码 END -->
     <% if (theme.comment === 'gitment') { %>
       <!-- Gitment START -->

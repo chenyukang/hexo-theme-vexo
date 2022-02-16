@@ -3,6 +3,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="<%= config.description || theme.description %>">
   <meta name="keyword" content="<%= config.keyword || theme.keyword %>">
+  <link rel="alternate" type="application/rss+xml" title="<%= config.title %>; Feed" href="https://catcoding.me/atom.xml" />
   <% if (config.favicon || theme.favicon){ %>
     <link rel="shortcut icon" type="image/ico" href="<%= config.favicon || theme.favicon %>"/>
   <% } else { %>

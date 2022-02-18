@@ -2,8 +2,15 @@
     <h2>Projects</h2>
     <p class="post-date">开源项目</p>
 </div>
+
+
+
 <main class="app-body project-app">
-    <div class="card-container" id="all-project"></div>
+<div class="center" id="loader" style="margin-top: 30px">
+    <div class="loader"></div>
+    </div>
+    <div class="card-container" id="all-project">
+    </div>
 </main>
 <script>
 
@@ -16,11 +23,12 @@
              Accept: 'application/vnd.github.v3.raw'
          },
          type: 'get',
-         url: 'https://api.github.com/users/<%= config.github_username %>/repos?type=owner&direction=desc&sort=updated',
+         url: 'https://api.github.com/users/<%= config.github_username %>/repos?type=sources&direction=desc&sort=updated&per_page=1000',
          success: function (data) {
              var repos = data.sort(function(a, b) {
                  return (b.stargazers_count - a.stargazers_count)
              }).slice(0, 9)
+             $('#loader').hide();
              var cardHtml = repos.map(function(item) {
                  var description = item.description || ""
                  if (description.replace(/[\u0391-\uFFE5]/g, "aa").length > 72) {

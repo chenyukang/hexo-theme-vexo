@@ -3,6 +3,7 @@
   <p class="post-date">文章归档: <%- site.posts.count() %> </p>
 </div>
 <main class="app-body" id="archives">
+<div class="archives-container">
   <% let years = {}; %>
   <%
     site.posts.each(post => {
@@ -16,7 +17,9 @@
   <% for (let year of Object.keys(years).reverse()) { %>
     <%- partial('_partial/archive', { year: year, posts: years[year].reverse() }) %>
   <% } %>
+</div>
 </main>
+
 
 <script>
   (function () {

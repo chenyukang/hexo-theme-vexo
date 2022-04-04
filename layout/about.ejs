@@ -1,38 +1,32 @@
 <div id="about-banner" style="background-image: url(<%- theme.about.banner %>)"></div>
-<div class="author">
-
-    <article style="margin-top: 40px;">
-
-        <p>工作了十多年，热爱技术，长期参与开源。</p>
-        <p>写作是我的乐趣,</p>
-        <p>我主要写技术、写作、英语、个人成长相关主题。</p>
-        <p>如果你对我写的东西感兴趣，</p>
-        <p>请订阅我的 <a href="/atom.xml">Rss</a> 或者公众号。</p>
-
-        <p></p>
-        <p>文章采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="external">BY-NC-SA</a> 协议进行授权，如需转载请注明。
-        </p>
-        <p><a href="mailto:moorekang@gmail.com" target="_blank" rel="external">联系我 👻❤️</a></p>
-
-        <img src="/images/wechat-qr-code-small.jpg">
-
+<main class="app-body" style="max-width: 760px">
+    <article class="post-article">
+        <section class="markdown-content">
+            <%- page.content %>
+        </section>
     </article>
+</main>
 
-    <section class="share-icons">
-        <a class="icon-github" href="https://github.com/<%- theme.about.github_username %>" target="_blank">
-            <span class="fa-stack fa-lg">
+<div class="author" style="margin-top: 10px">
+    <p><a href="mailto:moorekang@gmail.com" target="_blank" rel="external">邮件联系我 👻</a></p>
+    <img src="/images/wechat-qr-code-small.jpg">
+    <p>文章采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="external">BY-NC-SA</a> 协议进行授权，如需转载请注明。
+        <section class="share-icons">
+            <a class="icon-github" href="https://github.com/<%- theme.about.github_username %>" target="_blank">
+                <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                 </span>
-        </a>
-        <a class="icon-twitter" href="https://twitter.com/<%- theme.about.twitter_username %>" target="_blank">
-            <span class="fa-stack fa-lg">
+            </a>
+            <a class="icon-twitter" href="https://twitter.com/<%- theme.about.twitter_username %>" target="_blank">
+                <span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                         </span>
-        </a>
-    </section>
+            </a>
+        </section>
 </div>
+
 
 <script>
     (function() {

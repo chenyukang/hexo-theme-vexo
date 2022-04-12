@@ -5,7 +5,12 @@
     <a href="javascript:;"></a>
   </div>
 </div>
+<% let show_cate = (theme.catalog && (toc(page.content) !== "")) ; %>
+<% if (show_cate) { %>
 <main class="app-body flex-box">
+<% } else { %>
+<main class="app-body flex-box" style="max-width: 850px" >
+<% } %>
   <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><%- page.content %></section>
@@ -56,7 +61,7 @@
   </article>
   <!-- Article END -->
   <!-- Catalog START -->
-  <% if (theme.catalog && (toc(page.content) !== "") ) { %>
+  <% if (show_cate) { %>
     <%- partial('_partial/catalog') %>
   <% } %>
   <!-- Catalog END -->

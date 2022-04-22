@@ -3,6 +3,13 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="<%= config.description || theme.description %>">
   <meta name="keyword" content="<%= config.keyword || theme.keyword %>">
+  <meta property="og:site_name" content="<%= config.title %>">
+  <meta property="og:title" content="<%= page.title %> | <%= config.title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="<%= config.language %>" />
+  <meta property="og:description" content="<%= page.description %>" />
+  <meta property="og:image" content="<%= page.thumbnail || "http://catcoding.me/css/images/logo.png" %>" />
+
   <link rel="alternate" type="application/rss+xml" title="<%= config.title %>; Feed" href="https://catcoding.me/atom.xml" />
   <% if (config.favicon || theme.favicon){ %>
     <link rel="shortcut icon" type="image/ico" href="<%= config.favicon || theme.favicon %>"/>
@@ -21,8 +28,7 @@
   <%- css(['css/style', 'css/plugins/fonts.css']) %>
   <%- css(['css/style', 'css/plugins/code.css']) %>
   <%- css(['css/style', 'css/plugins/font-awesome.min.css']) %>
-
-    <%- js(['js/qrious', 'js/gitment', 'js/highlight.min', 'js/jquery.min', 'js/geopattern.min.js', 'js/nprogress.min.js']) %>
+  <%- js(['js/qrious', 'js/gitment', 'js/highlight.min', 'js/jquery.min', 'js/geopattern.min.js', 'js/nprogress.min.js']) %>
 
   <div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
       <img src="/css/images/logo.png" width='400px' height='400px'/>

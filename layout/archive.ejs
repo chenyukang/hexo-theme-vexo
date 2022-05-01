@@ -1,11 +1,11 @@
 <div id="article-banner">
-    <h2>Archives</h2>
+  <h2>Archives</h2>
   <p class="post-date">文章归档: <%- site.posts.count() %> </p>
 </div>
 <main class="app-body" id="archives">
-<div class="archives-container">
-  <% let years = {}; %>
-  <%
+  <div class="archives-container">
+    <% let years = {}; %>
+    <%
     site.posts.each(post => {
       const y = post.date.year();
       if (!years[y]) {
@@ -14,15 +14,15 @@
       years[y].push(post);
     })
   %>
-  <% for (let year of Object.keys(years).reverse()) { %>
+    <% for (let year of Object.keys(years).reverse()) { %>
     <%- partial('_partial/archive', { year: year, posts: years[year].reverse() }) %>
-  <% } %>
-</div>
+    <% } %>
+  </div>
 </main>
 
 
 <script>
-  (function () {
+  (function() {
     var url = '<%= config.url %>/<%= page.path %>';
     $('#article-banner').geopattern(url);
     $('.header').removeClass('fixed-header');

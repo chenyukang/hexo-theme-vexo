@@ -5,7 +5,7 @@
       <a class="nav-left" href="<%- url_for(page.prev.path) %>">
         <span class="nav-arrow">← </span>
         <% if (page.prev.title){ %>
-          <%= page.prev.title %>
+          <%= truncate(page.prev.title, { length: 30, omission: ' ...' }) %>
         <% } else { %>
           (untitled)
         <% } %>
@@ -14,7 +14,7 @@
     <% if (page.next){ %>
       <a class="nav-right" href="<%- url_for(page.next.path) %>">
         <% if (page.next.title){ %>
-          <%= page.next.title %>
+          <%= truncate(page.next.title, { length: 30, omission: ' ...' }) %>
         <% } else { %>
           (untitled)
         <% } %>

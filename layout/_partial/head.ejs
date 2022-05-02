@@ -9,8 +9,15 @@
   <meta property="og:locale" content="<%= config.language %>" />
   <meta property="og:description" content="<%= page.description %>" />
   <meta property="og:image" content="<%= page.thumbnail || " http://catcoding.me/css/images/logo.png " %>" />
-
   <link rel="alternate" type="application/rss+xml" title="<%= config.title %>; Feed" href="https://catcoding.me/atom.xml" />
+
+  <%- css(['css/style', 'css/plugins/gitment.css']) %>
+  <%- css(['css/style', 'css/plugins/fonts.css']) %>
+  <%- css(['css/style', 'css/plugins/code.css']) %>
+  <%- css(['css/style', 'css/plugins/prism.css']) %>
+  <%- css(['css/style', 'css/plugins/font-awesome.min.css']) %>
+  <%- js(['js/qrious', 'js/gitment', 'js/jquery.min', 'js/geopattern.min.js', 'js/nprogress.min.js']) %>
+  
   <% if (config.favicon || theme.favicon){ %>
   <link rel="shortcut icon" type="image/ico" href="<%= config.favicon || theme.favicon %>" />
   <% } else { %>
@@ -25,17 +32,11 @@
     <% } %>
   </title>
 
-  <%- css(['css/style', 'css/plugins/gitment.css']) %>
-  <%- css(['css/style', 'css/plugins/fonts.css']) %>
-  <%- css(['css/style', 'css/plugins/code.css']) %>
-  <%- css(['css/style', 'css/plugins/prism.css']) %>
-  <%- css(['css/style', 'css/plugins/font-awesome.min.css']) %>
-  <%- js(['js/qrious', 'js/gitment', 'js/jquery.min', 'js/geopattern.min.js', 'js/nprogress.min.js']) %>
-
   <div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
     <img src="/css/images/logo.png" width='400px' height='400px' />
   </div>
 
+  <%- partial('_third-party/mathjax') %>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77282254-1"></script>
   <script>

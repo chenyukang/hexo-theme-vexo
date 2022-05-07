@@ -1,0 +1,29 @@
+<div id="article-banner">
+  <h2>Search</h2>
+</div>
+
+<main class="index-body">
+</main>
+
+<div class="search-body">
+
+<script async src="https://cse.google.com/cse.js?cx=72d724a85294bbeab"></script>
+<div class="gcse-search"></div>
+
+</div>
+
+<script>
+  (function () {
+    var url = '<%= config.url %>/<%= page.path %>'
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+    var tag = location.hash.replace('#', '')
+    if (tag) {
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+        scrollTop: $(tagId).offset().top 
+      }, 400)
+    }
+  })();
+</script>

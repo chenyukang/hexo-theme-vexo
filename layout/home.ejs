@@ -1,0 +1,37 @@
+<div id="home-banner" style="padding: 30px 20px 25px 20px;">
+  <main class="home-body">
+    <h1 style="text-align: center; background: rgb(216, 243, 147); font-weight: bold; color:#594848">Don't Panic</h1>
+
+    <%- page.content %>
+
+    <h2> 最近更新： </h2>
+    <div style="font-size: 14px; color: #594848; text-align: left">
+      <ul>
+        <% let posts = []; %>
+        <% var index = 0 %>
+        <% site.posts.forEach(post => { %>
+        <% posts.push(post); %>
+        <% }); %>
+        <% posts.sort((l, r) => r.date - l.date) %>
+        <% posts.forEach(function(post) { %>
+        <% if(index <= 5) { %>
+        <li>
+          <h3>
+            <%- date(post.date) %> ： <a href="<%= url_for(post.path) %>"><%- post.title %></a>
+          </h3>
+          <% index++ %>
+        </li>
+        <% } %>
+        <% }) %>
+    </div>
+
+<h2> 统计信息： </h2>
+    <div style="font-size: 15px; color: #594848; text-align: left">
+    <ul>
+    <li><p class="post-date">文章归档: <%- site.posts.count() %> </p></li>
+    <li><p class="post-date">总共写了: <%- site.posts.map(p => p.content.replace(/\s/g, "").length).reduce((partialSum, a) => partialSum + a, 0); %> </p></li>
+    </ul>
+    </div>
+  </main>
+
+  </main>

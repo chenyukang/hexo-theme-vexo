@@ -1,37 +1,128 @@
-<main class="app-body" style="max-width: 760px">
-    <% var index = 0 %>
-  <% page.posts.each(function(post) { %>
-    <article class="article-card">
-      <h2 class="article-head" font-color="red">
-        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
-      </h2>
-      <p class="article-date"><%- date(post.date, "LL") %>
-          <% if (post.tags && post.tags.length) { %>
-              <%- partial('_partial/tag', { tags: post.tags }) %>
-          <% } %>
-      </p>
-      <div class="article-summary">
-        <% index = index + 1 %>
-        <% if (post.excerpt) { %>
-          <%- post.excerpt %>
-        <% } else { %>
-            <% if (index == 1 && page.current == 1) { %>
-                <%- post.content %>
-            <% } else  { %>
-                <%- truncate(strip_html(post.content), { length: 150, omission: ' .....' }) %>
-            <% } %>
+  <% let posts = []; %>
+  <% var index = 0 %>
+  <% site.posts.forEach(post => { %>
+  <% posts.push(post); %>
+  <% }); %>
+  <% var last_date = posts[0].date %>
+  <% posts.sort((l, r) => r.date - l.date) %>
+
+  <div id="home-banner">
+    <div class="app-body" style="max-width: 760px; text-align: left; padding-top: 0px;">
+      <main class="home-body">
+        <% if (!page.prev) { %>
+        <h2 style="text-align: center; background: rgb(240 255 201); font-weight: bold; color:#594848">Coding and writing, don't Panic</h2>
+
+        <div class="row">
+          <div class="col-8 space-20" style="margin-right: 80px">
+            <h3> 编程技术 </h3>
+            <div style="color: #594848; text-align: left">
+              <ul>
+                <li>
+                  <a href="/p/entry-for-learning-programming/">我的编程学习经验</a>
+                </li>
+                <li>
+                  <a href="/p/learn-from-source-code/">如何高效阅读源代码</a>
+                </li>
+                <li>
+                  <a href="/p/learning-by-contribute/">最好的学习是输出</a>
+                </li>
+
+                <li>
+                  <a href="/p/why-open-source/">为什么要开源</a>
+                </li>
+              </ul>
+            </div>
+
+            <h3> 写作&amp;生活 </h3>
+            <div style="color: #594848; text-align: left">
+              <ul>
+                <li>
+                  <a href="/p/writing-for-joy/">写作 12 年，我的经验和技巧</a>
+                </li>
+                <li>
+                  <a href="/p/diversity/">远离内卷和无趣，我选择多元</a>
+                </li>
+                <li>
+                  <a href="/p/how-to-beat-anxiety/"> 我用这三种方法克服焦虑</a>
+                </li>
+                <li>
+                  <a href="/p/publish-to-wechat/"> 如何无痛苦更新公众号 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-8 space-20">
+
+            <h3> 英语学习 </h3>
+            <div style="color: #594848; text-align: left">
+              <ul>
+                <li>
+                  <a href="/p/learn-english-for-big-world/">世界很大，一定要学好英语</a>
+                </li>
+                <li>
+                  <a href="/p/learn-english-as-programmer/">培养习惯，程序员学英语没那么难</a>
+                </li>
+                <li>
+                  <a href="/p/improve-english-writing-as-progammer/">程序员如何提高英文写作</a>
+                </li>
+                <li>
+                  <a href="/p/my-writing-story-on-medium/"> 我如何写出一万元的文章 </a>
+                </li>
+              </ul>
+            </div>
+
+            <h3> 工具&amp;软件 </h3>
+            <div style="color: #594848; text-align: left">
+              <ul>
+                <li>
+                  <a href="/p/my-notes-taking-tools-and-experience/"> 我的知识管理工具和经验 </a>
+                </li>
+                <li>
+                  <a href="/p/intro-to-obweb/"> 打造自己的工具 - Obweb </a>
+                </li>
+                <li>
+                  <a href="/p/obsidian-for-programmer/"> 我的 Obsidian 使用经验 </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size: 15px; color: #594848; text-align: left">
+          <p class="font-size: bold"> <span style="font-weight: bold">统计：</span>
+          所有文章: <%- site.posts.count() %> ，总共写了: <%- site.posts.map(p => p.content.replace(/\s/g, "").length).reduce((partialSum, a) => partialSum + a, 0); %>
+          ，最近更新: <%- date(posts[0].date) %>
+          </p>
+        </div>
         <% } %>
-      </div>
-      <% if (index == 1 && page.current == 1) { %>
-          <a class="more" href="<%- url_for(post.path) + "#footer" %>">发表评论</a>
-      <% } else { %>
-          <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
-      <% } %>
-    </article>
-  <% }) %>
 
-  <% if (page.total > 1){ %>
-    <%- partial('_partial/pager') %>
-  <% } %>
-</main>
 
+        <% if (!page.prev) { %>
+        <h3> 最近更新： </h3>
+        <% } else { %>
+        <h2> 当前 <%- page.prev + 1 %>，共 <%- page.total %> 页 </h2>
+        <% } %>
+        <% var index = 0 %>
+        <% page.posts.each(function(post) { %>
+        <article class="article-card">
+          <h3>
+            <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+          </h3>
+          <p class="article-date"><%- date(post.date) %></p>
+          <div class="article-summary">
+            <% index = index + 1 %>
+            <% if (post.excerpt) { %>
+            <%- post.excerpt %>
+            <% } else { %>
+            <%- truncate(strip_html(post.content), { length: 150, omission: ' ...... ' }) %>
+            <% } %>
+          </div>
+        </article>
+        <% }) %>
+
+        <% if (page.total > 1){ %>
+        <%- partial('_partial/pager') %>
+        <% } %>
+    </div>
+    </main>

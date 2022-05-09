@@ -1,37 +1,37 @@
-<div id="home-banner" style="padding: 30px 20px 25px 20px;">
-  <main class="home-body">
-    <h1 style="text-align: center; background: rgb(216, 243, 147); font-weight: bold; color:#594848">Don't Panic</h1>
-
-    <%- page.content %>
-
-    <h2> 最近更新： </h2>
-    <div style="font-size: 14px; color: #594848; text-align: left">
-      <ul>
-        <% let posts = []; %>
-        <% var index = 0 %>
-        <% site.posts.forEach(post => { %>
-        <% posts.push(post); %>
-        <% }); %>
-        <% posts.sort((l, r) => r.date - l.date) %>
-        <% posts.forEach(function(post) { %>
-        <% if(index <= 5) { %>
-        <li>
-          <h3>
-            <%- date(post.date) %> ： <a href="<%= url_for(post.path) %>"><%- post.title %></a>
-          </h3>
-          <% index++ %>
-        </li>
+<main class="app-body" style="max-width: 760px">
+    <% var index = 0 %>
+  <% page.posts.each(function(post) { %>
+    <article class="article-card">
+      <h2 class="article-head" font-color="red">
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+      </h2>
+      <p class="article-date"><%- date(post.date, "LL") %>
+          <% if (post.tags && post.tags.length) { %>
+              <%- partial('_partial/tag', { tags: post.tags }) %>
+          <% } %>
+      </p>
+      <div class="article-summary">
+        <% index = index + 1 %>
+        <% if (post.excerpt) { %>
+          <%- post.excerpt %>
+        <% } else { %>
+            <% if (index == 1 && page.current == 1) { %>
+                <%- post.content %>
+            <% } else  { %>
+                <%- truncate(strip_html(post.content), { length: 150, omission: ' .....' }) %>
+            <% } %>
         <% } %>
-        <% }) %>
-    </div>
+      </div>
+      <% if (index == 1 && page.current == 1) { %>
+          <a class="more" href="<%- url_for(post.path) + "#footer" %>">发表评论</a>
+      <% } else { %>
+          <a class="more" href="<%- url_for(post.path) %>"><%- theme.excerpt_link %></a>
+      <% } %>
+    </article>
+  <% }) %>
 
-<h2> 统计信息： </h2>
-    <div style="font-size: 15px; color: #594848; text-align: left">
-    <ul>
-    <li><p class="post-date">文章归档: <%- site.posts.count() %> </p></li>
-    <li><p class="post-date">总共写了: <%- site.posts.map(p => p.content.replace(/\s/g, "").length).reduce((partialSum, a) => partialSum + a, 0); %> </p></li>
-    </ul>
-    </div>
-  </main>
+  <% if (page.total > 1){ %>
+    <%- partial('_partial/pager') %>
+  <% } %>
+</main>
 
-  </main>

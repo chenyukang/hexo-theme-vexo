@@ -4,6 +4,7 @@
   <% } else { %>
     <a class="unvisible" href="<%- url_for(page.prev_link) %>"><span class="page-arrow">←</span> Prev</a>
   <% } %>
+    <a><span class="page-arrow"> <%- page.prev + 1 %> / <%- page.total %> </span></a>
   <% if (page.next) { %>
     <a href="<%- url_for(page.next_link) %>">Next<span class="page-arrow"> →</span></a>
   <% } else { %>

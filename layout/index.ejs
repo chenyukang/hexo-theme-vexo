@@ -3,7 +3,6 @@
   <% site.posts.forEach(post => { %>
   <% posts.push(post); %>
   <% }); %>
-  <% var last_date = posts[0].date %>
   <% posts.sort((l, r) => r.date - l.date) %>
 
   <% wordCount = site.posts.map(p => Array.from(p.content).map(c => (c.match(/[\u4e00-\u9fa5]/) || c.match(/[\u9FA6-\u9fcb]/)) ? 1 : 0).reduce(function (sum, cur) { return sum + cur}, 0)).reduce((partialSum, a) => partialSum + a, 0); %>
@@ -94,7 +93,7 @@
         <div style="font-size: 15px; color: #594848; text-align: left">
           <p class="font-size: bold"> <span style="font-weight: bold">统计：</span>
           所有文章: <%- site.posts.count() %> ，总共写了: <%- wordCount %>
-          ，最近更新: <%- date(Date.now()) +  " " + time(Date.now()) %>
+          ，最近更新: <%- moment(Date.now()).tz('Asia/Shanghai').locale('zh-cn').calendar() %>
           </p>
         </div>
         <% } %>

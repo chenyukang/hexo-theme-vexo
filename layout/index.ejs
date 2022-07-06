@@ -93,7 +93,7 @@
         <div style="font-size: 15px; color: #594848; text-align: left">
           <p class="font-size: bold"> <span style="font-weight: bold">统计：</span>
           所有文章: <%- site.posts.count() %> ，总共写了: <%- wordCount %>
-          ，最近更新: <%- moment(Date.now()).tz('Asia/Shanghai').locale('zh-cn').calendar() %>
+          ，最近更新: <%- moment(Date.now()).tz('Asia/Shanghai').locale('zh-cn').format('YYYY-MM-DD, a h:mm') %>
           </p>
         </div>
         <% } %>

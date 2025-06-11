@@ -19,12 +19,9 @@ highlight:
   #dracula
   solarized-dark
 
-  
-
 github_username: chenyukang
 zhihu_username: cyukang
 douban_username: moorekang
-
 
 # catalog
 catalog: true
@@ -63,4 +60,3 @@ mathjax:
   enable: true
   per_page: false
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  #//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML

@@ -13,12 +13,16 @@
   .toc-main
     padding-left: 20px
     border-left: 1px solid color-border
-    width: 196px
+    width: 260px
     box-sizing: border-box
     .toc-title
-      font-size: 1.2em
+      font-size: 1.0em
       position: relative
       padding-left: 28px
+      max-width: 100%
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
       &:before
         content: ''
         position: absolute
@@ -35,6 +39,22 @@
       max-height: 480px
       &::-webkit-scrollbar
         display: none
+      li
+        position: relative
+        list-style: none
+        line-height: 1.5
+        text-align: left
+        text-overflow: ellipsis
+        a
+          display: inline-block
+          padding-left: 1em
+          position: relative
+          &::before
+            content: '•'
+            position: absolute
+            left: 0
+            color: #bbb
+            font-size: 1em
     ol
       padding-left: 20px
     li

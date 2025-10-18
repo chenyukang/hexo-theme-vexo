@@ -17,6 +17,8 @@
     <section class="markdown-content"><%- page.content %></section>
 
     <p></p>
+
+  <% if (page.path != "links/index.html" && page.path != "ideas/index.html") { %>
     <!-- 二维码 START -->
     <% if (theme.qrcode) { %>
         <div class="qrcode">
@@ -51,8 +53,6 @@
       <!-- No Comment -->
     <% } %>
 
-
-<% if (page.path != "links/index.html") { %>
     <script src="https://utteranc.es/client.js"
       repo="chenyukang/chenyukang.github.io"
       issue-term="pathname"

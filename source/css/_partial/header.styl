@@ -59,6 +59,43 @@
   display: inline-block
   margin: 0 8px
 
+.theme-toggle-item
+  margin: 0 0 0 3px
+
+.theme-toggle
+  padding: 0
+  border: 0
+  background: none
+  color: color-white
+  cursor: pointer
+  line-height: 1
+  text-align: center
+  font-size: 1em
+  vertical-align: middle
+  &:hover
+    color: color-primary
+  .fa-stack
+    display: inline-block
+  .fa-adjust
+    color: #b8d7c8
+
+.theme-toggle-mobile
+  display: none
+  float: right
+  margin: 0 14px 0 0
+  @media m-mobile
+    display: inline-block
+
+.fixed-header
+  .theme-toggle
+    color: color-dark
+    &:hover
+      color: color-primary
+    .fa-adjust
+      color: color-dark
+    &:hover .fa-adjust
+      color: color-primary
+
 .item-link
   height: 40px
   line-height: 40px

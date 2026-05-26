@@ -48,7 +48,7 @@ gitment_oauth_secret: 84f77bd89f8dfbd1bf77dcd696f2a66b1afe7587
 # if you want to use uyan as your blog comment, plz remove/comment out gitment config
 
 about:
-  banner: http://chenyukang.github.io/images/134871342111-2510476.jpg
+  banner: http://catcoding.me/images/134871342111-2510476.jpg
   avatar: https://avatars1.githubusercontent.com/u/230646?v=4&s=460
   description: "Dont't Panic"
   twitter_username: cyukang
